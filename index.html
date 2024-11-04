@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicias de Azúcar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffefdb;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ff6f61;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffdb4d;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            border: 1px solid #ff6f61;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background-image: url('pasteleria-hero.jpg'); /* Cambia la ruta a tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .values {
+            border: 1px solid #ff6f61;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #ffdb4d;
+            text-align: center;
+        }
+        .values h3 {
+            margin: 0;
+            color: #ff6f61;
+        }
+        .mission, .vision {
+            border: 1px solid #ff6f61;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #ffe6cc;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .mission h3, .vision h3 {
+            margin: 0;
+            color: #ff6f61;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .menu-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .promotions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .promotion-item {
+            width: 30%;
+            margin: 10px;
+            border: 1px solid #ff6f61;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #ffdb4d;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff6f61;
+            color: white;
+        }
+        .button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ffdb4d;
+        }
+        .location {
+            display: none;
+            background-color: #ffe6cc;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .delivery-form {
+            display: none;
+            background-color: #ffe6cc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2em;
+            }
+            .promotion-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Delicias de Azúcar</h1>
+    <nav>
+        <a href="#" onclick="toggleSection('vision')">Misión y Visión</a>
+        <a href="#" onclick="toggleSection('menu')">Menú</a>
+        <a href="#" onclick="toggleSection('promociones')">Promociones</a>
+        <a href="#" onclick="toggleSection('contacto')">Contacto</a>
+        <a href="#" onclick="toggleSection('reservas')">Reservas</a>
+        <a href="#" onclick="toggleSection('delivery')">Delivery</a>
+        <a href="#" onclick="toggleLocation()">¿Dónde nos encuentras?</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Endulzamos Tu Paladar </h2>
+</div>
+
+<div class="mission section" id="mission">
+    <h3>Misión</h3>
+    <p>Endulzar la vida de nuestros clientes ofreciendo pasteles y postres de alta calidad, hechos con amor y los mejores ingredientes naturales. Nos comprometemos a brindar un servicio excepcional que haga que cada visita sea especial.</p>
+</div>
+
+<div class="vision section" id="vision">
+    <h3>Visión</h3>
+    <p>Ser la pastelería preferida en Juliaca, reconocida por la calidad de nuestros productos y el excelente servicio al cliente. Aspiramos a expandir nuestra presencia y ofrecer experiencias inolvidables a nuestros clientes en cada celebración.</p>
+</div>
+
+<div id="menu" class="section">
+    <h2>Menú de Productos</h2>
+    <div class="menu-item">
+
+        <img src="tarta-chocolate.jpg" alt="Tarta de Chocolate">
+        <div>
+            <h4>Tarta de Chocolate</h4>
+            <p>Precio: S/. 25.00</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="pastel-vainilla.jpg" alt="Pastel de Vainilla">
+        <div>
+            <h4>Pastel de Vainilla</h4>
+            <p>Precio: S/. 20.00</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="galletas-avena.jpg" alt="Galletas de Avena">
+        <div>
+            <h4>Galletas de Avena</h4>
+            <p>Precio: S/. 10.00</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="brownies-nueces.jpg" alt="Brownies de Nueces">
+        <div>
+            <h4>Brownies de Nueces</h4>
+            <p>Precio: S/. 15.00</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="cheesecake-fresa.jpg" alt="Cheesecake de Fresa">
+        <div>
+            <h4>Cheesecake de Fresa</h4>
+            <p>Precio: S/. 30.00</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="panqueques-nutella.jpg" alt="Panqueques de Nutella">
+        <div>
+            <h4>Panqueques de Nutella</h4>
+            <p>Precio: S/. 18.00</p>
+        </div>
+    </div>
+    <!-- Agregar más productos hasta 25 -->
+</div>
+
+<div id="promociones" class="section">
+    <h2>Promociones</h2>
+    <div class="promotions">
+        <div class="promotion-item">
+            <h4>Dos por Uno en Tartas</h4>
+            <p>Compra una tarta y lleva otra gratis.</p>
+        </div>
+        <div class="promotion-item">
+            <h4>30% de Descuento en Galletas</h4>
+            <p>Solo por esta semana, aprovecha este descuento.</p>
+        </div>
+        <div class="promotion-item">
+            <h4>Combo Familiar</h4>
+            <p>Incluye 1 pastel y 12 galletas a solo S/. 50.00.</p>
+        </div>
+    </div>
+</div>
+
+<div id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p><strong>Gerente:</strong> Brayan Alex Ochochoque Laura</p>
+    <p><strong>Teléfono:</strong> 9221339393</p>
+    <p><strong>Asistente de Ventas:</strong> Ana Torres - 987654321</p>
+    <p><strong>Email:</strong> deliciasdeazucar@example.com</p>
+</div>
+
+<div id="reservas" class="section">
+    <h2>Reservas</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required><br>
+        <label for="producto">Producto:</label>
+        <select id="producto" required>
+            <option value="">Seleccione un producto</option>
+            <option value="tarta">Tarta de Chocolate</option>
+            <option value="pastel">Pastel de Vainilla</option>
+            <option value="galletas">Galletas de Avena</option>
+        </select><br>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" required><br>
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago" required>
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+        </select><br>
+        <button type="submit" class="button">Enviar Reserva</button>
+    </form>
+</div>
+
+<div id="delivery" class="delivery-form">
+    <h2>Servicio de Delivery</h2>
+    <form>
+        <label for="nombreDelivery">Nombre:</label>
+        <input type="text" id="nombreDelivery" required><br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required><br>
+        <label for="telefonoDelivery">Teléfono:</label>
+        <input type="text" id="telefonoDelivery" required><br>
+        <button type="submit" class="button">Solicitar Delivery</button>
+    </form>
+</div>
+
+<div class="location" id="location">
+    <h2>¿Dónde nos encuentras?</h2>
+    <p><strong>Dirección:</strong> Calle 180, San Miguel, Juliaca</p>
+    <p><strong>Mapa:</strong></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387146.7893251275!2d-69.36374464021402!3d-15.50065478706187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915d1d1b73a1f6e5%3A0xd4a2cb1ab6c942b4!2sCalle%20180%2C%20San%20Miguel%2C%20Juliaca!5e0!3m2!1ses-419!2spe!4v1635453544720!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<footer>
+    <p>&copy; 2024 Delicias de Azúcar. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function toggleSection(sectionId) {
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function toggleLocation() {
+        var locationSection = document.getElementById('location');
+        locationSection.style.display = (locationSection.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
